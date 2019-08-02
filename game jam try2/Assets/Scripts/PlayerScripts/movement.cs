@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class movement : MonoBehaviour
@@ -11,6 +10,8 @@ public class movement : MonoBehaviour
     public float maxDistance;
     private Vector2 direction;
     private float power;
+    private bool down = false;
+    public GameObject block;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,7 @@ public class movement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         lr = GetComponent<LineRenderer>();
         lr.enabled = false;
+
     }
 
     // Update is called once per frame
@@ -32,14 +34,21 @@ public class movement : MonoBehaviour
         power *= maxForce;
         direction = direction.normalized;
 
-        if (Input.GetMouseButton(0)) {
-            lr.enabled = true;
-        } else {
-            lr.enabled = false;
-        }
 
-        if (Input.GetMouseButtonUp(0)) {
+        if (Input.GetMouseButtonDown(0)) {
+            RaycastHit2D hit = Physics2D.Raycast(mouseLocation, Vector2.zero);
+
+            if (hit.collider != null && hit.collider.CompareTag("Player")){
+                lr.enabled = true;
+                down = true;
+            } else {
+                Instantiate(block, mouseLocation, Quaternion.identity);
+            }
+        }
+        if (Input.GetMouseButtonUp(0) && down == true) {
             fire();
+            lr.enabled = false;
+            down = false;
         }
     }
 
