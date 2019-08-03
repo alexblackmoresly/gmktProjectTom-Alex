@@ -39,10 +39,10 @@ public class movement : MonoBehaviour
         if (Input.GetMouseButtonDown(0)) {
             RaycastHit2D hit = Physics2D.Raycast(mouseLocation, Vector2.zero);
 
-            if (hit.collider != null && hit.collider.CompareTag("Player")){
+            if (hit.collider != null && hit.collider.CompareTag("Player") && enableFiring == true){
                 lr.enabled = true;
                 down = true;
-            } else if ((mouseLocation - (Vector2)transform.position).magnitude > 2f){
+            } else if (((mouseLocation - (Vector2)transform.position).magnitude > 2f) || enableFiring == false){
                 Instantiate(block, mouseLocation, Quaternion.identity);
             }
         }

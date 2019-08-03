@@ -7,6 +7,8 @@ public class blockPositioning : MonoBehaviour
     private bool canMove;
     public Vector2 startMouseLocation, currentMouseLocation;
     private Vector2 direction;
+
+    private float size;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,14 +17,14 @@ public class blockPositioning : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         if (canMove == true)
         {
-            moveBlock(startMouseLocation);
+            moveBlock();
         }
     }
-    void moveBlock(Vector2 startPos)
+    void moveBlock()
     {
         if (Input.GetMouseButton(0))
         {
@@ -31,6 +33,9 @@ public class blockPositioning : MonoBehaviour
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
             transform.rotation = rotation;
+
+            transform.position = (currentMouseLocation + startMouseLocation) / 2;
+            transform.localScale = new Vector3((currentMouseLocation - startMouseLocation).magnitude, 0.3f, 1f);
         }
         else
         {
