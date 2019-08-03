@@ -28,7 +28,7 @@ public class objDestruction : MonoBehaviour
             for (float i = 0; i < GetComponent<Rigidbody2D>().mass; i += Random.Range(minMassOfDebris, maxMassOfDebris))
             {
                 
-                GameObject createdDebris = (GameObject)Instantiate(fragment, transform.position, Quaternion.identity);
+                GameObject createdDebris = Instantiate(fragment, transform.position, Quaternion.identity);
                 createdDebris.GetComponent<Rigidbody2D>().mass = (i - previousI);
                 previousI = i;
                 

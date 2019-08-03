@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class playerGravity : MonoBehaviour
 {
-    private GameObject[] massiveObjects;
+    private GameObject[] massiveObjects, counter;
     private Rigidbody2D rb2d;
     private Vector2 resultantForce, tempForce, direction;
     private float objMass, gravityConstant;

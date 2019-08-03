@@ -31,8 +31,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1394993626556399588}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.74, y: 0.64, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -15.96, y: 1.97, z: 0}
+  m_LocalScale: {x: 1.2036004, y: 1.2036004, z: 1.2036004}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -74,8 +74,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5f1401851c8e5ec4e994333d9810f480, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.1745472, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 98918edfe1dcd774c97fade078a4ea6f, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGravityEnabled: 1
+  playerNotDestroyed: 1
 --- !u!50 &1394993626556399590
 Rigidbody2D:
   serializedVersion: 4
@@ -132,9 +133,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.5803485, y: 0}
   serializedVersion: 2
-  m_Radius: 1.5172191
+  m_Radius: 4.228043
 --- !u!114 &1394993626556399594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,7 +162,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c275c7c08ce8ed41a94e51672ffae4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destructThreshold: 0
+  fragment: {fileID: 2628895966519622533, guid: dc77027648eadd942bcdd81dd66b9645,
+    type: 3}
+  emptySprite: {fileID: 0}
+  destructThreshold: 100
+  minMassOfDebris: 0.3
+  maxMassOfDebris: 0.9
 --- !u!58 &1706549828969433798
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -175,6 +181,6 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.71275425, y: 0.11924553}
   serializedVersion: 2
-  m_Radius: 1.69
+  m_Radius: 4.2567587

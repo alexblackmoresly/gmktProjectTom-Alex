@@ -20,7 +20,7 @@ public class holeCollision : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(3);
         }
     }
 }

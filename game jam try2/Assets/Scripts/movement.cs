@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class movement : MonoBehaviour
 {
+    private GameObject[] theCounter;
     private Vector2 mouseLocation;
     public LineRenderer lr;
     public Rigidbody2D rb;
@@ -17,6 +18,7 @@ public class movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        theCounter = GameObject.FindGameObjectsWithTag("counter");
         rb = GetComponent<Rigidbody2D>();
         lr = GetComponent<LineRenderer>();
         lr.enabled = false;
@@ -58,5 +60,9 @@ public class movement : MonoBehaviour
         rb.AddForce(direction * power);
         enableFiring = false;
         GetComponent<playerGravity>().isGravityEnabled = true;
+        foreach (GameObject counter in theCounter)
+        {
+            counter.GetComponent<Counter>().startTimer = true;
+        }
     }
 }
