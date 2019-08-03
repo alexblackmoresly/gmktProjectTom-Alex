@@ -11,6 +11,7 @@ public class movement : MonoBehaviour
     private Vector2 direction;
     private float power;
     private bool down = false;
+    private bool enableFiring = true;
     public GameObject block;
 
     // Start is called before the first frame update
@@ -52,7 +53,10 @@ public class movement : MonoBehaviour
         }
     }
 
-    public void fire() {
+    public void fire()
+    {
         rb.AddForce(direction * power);
+        enableFiring = false;
+        GetComponent<playerGravity>().isGravityEnabled = true;
     }
 }

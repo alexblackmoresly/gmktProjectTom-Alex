@@ -8,6 +8,7 @@ public class playerGravity : MonoBehaviour
     private Rigidbody2D rb2d;
     private Vector2 resulantForce, tempForce, direction;
     private float objMass, gravityConstant;
+    public bool isGravityEnabled;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,8 +20,12 @@ public class playerGravity : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        addGravityForce();
+        if (isGravityEnabled == true)
+        {
+            addGravityForce();
+        }
     }
+    
     void addGravityForce()
     {
         resulantForce = resulantForce * 0;
