@@ -17,6 +17,7 @@ public class fragmentMove : MonoBehaviour
         transform.rotation = rotation;
         speed = Random.Range(minspeed, maxspeed);
         GetComponent<Rigidbody2D>().AddForce(direction * speed);
+        transform.localScale = new Vector3(1.5f * GetComponent<Rigidbody2D>().mass, 1.5f * GetComponent<Rigidbody2D>().mass, 1);
     }
 
     // Update is called once per frame

@@ -6,10 +6,12 @@ public class objDestruction : MonoBehaviour
 {
     public GameObject fragment;
     public Sprite emptySprite;
-    public float destructThreshold;
+    public float destructThreshold, minMassOfDebris, maxMassOfDebris;
+    private float previousI;
+
     // Start is called before the first frame update
     void Start()
-    {
+    { 
         
     }
 
@@ -22,10 +24,14 @@ public class objDestruction : MonoBehaviour
     {
         if ((other.GetComponent<Rigidbody2D>().mass * Mathf.Pow(other.GetComponent<Rigidbody2D>().velocity.magnitude, 2f)) > destructThreshold)
         {
-            
-            for (float i = 0; i < GetComponent<Rigidbody2D>().mass; i += 0.6f)
+
+            for (float i = 0; i < GetComponent<Rigidbody2D>().mass; i += Random.Range(minMassOfDebris, maxMassOfDebris))
             {
-                Instantiate(fragment, transform.position, Quaternion.identity);
+                
+                GameObject createdDebris = (GameObject)Instantiate(fragment, transform.position, Quaternion.identity);
+                createdDebris.GetComponent<Rigidbody2D>().mass = (i - previousI);
+                previousI = i;
+                
             }
             
             GetComponent<Rigidbody2D>().mass = 0;
