@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 4936539437643617979}
   - component: {fileID: 4936539437643617978}
   - component: {fileID: 4936539437643617980}
+  - component: {fileID: 1198159946207667202}
+  - component: {fileID: 1856365893859431429}
+  - component: {fileID: 4283251897958033157}
   m_Layer: 0
   m_Name: sun
   m_TagString: massive
@@ -69,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5f1401851c8e5ec4e994333d9810f480, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b17039f99781ad54d9e4dc899d21280b, type: 3}
   m_Color: {r: 1, g: 0.64551157, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,3 +104,47 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &1198159946207667202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4936539437643617977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ac678d5207aa424b9b8eb3dbe2da72d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!58 &1856365893859431429
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4936539437643617977}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -1.3990258, y: -0.3929844}
+  serializedVersion: 2
+  m_Radius: 4.4851723
+--- !u!58 &4283251897958033157
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4936539437643617977}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -1.4708853, y: -0.4087038}
+  serializedVersion: 2
+  m_Radius: 4.1326094
