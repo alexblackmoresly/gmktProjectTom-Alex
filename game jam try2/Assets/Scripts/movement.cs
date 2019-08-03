@@ -10,7 +10,7 @@ public class movement : MonoBehaviour
     public float maxForce;
     public float maxDistance;
     private Vector2 direction;
-    private float power;
+    public float power;
     private bool down = false;
     private bool enableFiring = true;
     public GameObject block;
@@ -18,10 +18,12 @@ public class movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 0;
         theCounter = GameObject.FindGameObjectsWithTag("counter");
         rb = GetComponent<Rigidbody2D>();
         lr = GetComponent<LineRenderer>();
         lr.enabled = false;
+        
 
     }
 
@@ -59,6 +61,7 @@ public class movement : MonoBehaviour
     {
         rb.AddForce(direction * power);
         enableFiring = false;
+        Time.timeScale = 1;
         GetComponent<playerGravity>().isGravityEnabled = true;
         foreach (GameObject counter in theCounter)
         {
