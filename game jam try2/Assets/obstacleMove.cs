@@ -11,9 +11,10 @@ public class obstacleMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        angle = angle * Mathf.Deg2Rad;
         startPos = new Vector2(transform.position.x, transform.position.y);
         rb2d = GetComponent<Rigidbody2D>();
-        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         direction = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)).normalized;
         transform.rotation = rotation;
         

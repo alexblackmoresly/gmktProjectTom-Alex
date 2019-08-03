@@ -42,7 +42,7 @@ public class movement : MonoBehaviour
             if (hit.collider != null && hit.collider.CompareTag("Player")){
                 lr.enabled = true;
                 down = true;
-            } else {
+            } else if ((mouseLocation - (Vector2)transform.position).magnitude > 2f){
                 Instantiate(block, mouseLocation, Quaternion.identity);
             }
         }
