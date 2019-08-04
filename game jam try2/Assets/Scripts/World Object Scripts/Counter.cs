@@ -10,6 +10,9 @@ public class Counter : MonoBehaviour
     public float timer;
     private GameObject[] blocks;
     public bool startTimer = false;
+
+    public int blockNo;
+    public float timeRequirement;
     // Start is called before the first frame update
     void Start()
     {
