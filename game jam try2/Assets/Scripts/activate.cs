@@ -35,6 +35,7 @@ public class activate : MonoBehaviour
             }
             if (applyForce == true) {
                 transform.GetComponent<Rigidbody2D>().AddForce(mag * dir.normalized);
+                Debug.Log("lol");
                 applyForce = false;
             }
             if (changeMass == true) {

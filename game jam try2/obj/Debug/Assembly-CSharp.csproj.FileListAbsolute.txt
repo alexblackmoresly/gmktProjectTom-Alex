@@ -1876,8 +1876,8 @@ C:\Programming garbage\game jam try2current\Temp\bin\Debug\UnityEngine.XRModule.
 C:\Programming garbage\game jam try2current\Temp\bin\Debug\UnityEngine.UI.xml
 C:\Programming garbage\game jam try2current\Temp\bin\Debug\UnityEngine.TestRunner.xml
 C:\Programming garbage\game jam try2current\Temp\bin\Debug\nunit.framework.xml
-C:\Programming garbage\game jam try2current\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
 C:\Programming garbage\game jam try2current\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
 C:\Programming garbage\game jam try2current\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 C:\Programming garbage\game jam try2current\obj\Debug\Assembly-CSharp.dll
 C:\Programming garbage\game jam try2current\obj\Debug\Assembly-CSharp.pdb
+C:\Programming garbage\game jam try2current\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache

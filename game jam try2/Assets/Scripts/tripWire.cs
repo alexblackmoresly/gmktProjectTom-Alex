@@ -8,6 +8,7 @@ public class tripWire : MonoBehaviour
     public bool instantiate;
     public GameObject insObject;
     public Vector2 insPos;
+    public bool triggerOnce;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,10 @@ public class tripWire : MonoBehaviour
             }
             if (instantiate == true) {
                 Instantiate(insObject, insPos, Quaternion.identity);
+            }
+            if (triggerOnce == true)
+            {
+                Destroy(gameObject);
             }
         }
     }
