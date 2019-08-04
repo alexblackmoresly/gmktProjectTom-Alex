@@ -35,7 +35,7 @@ public class blockPositioning : MonoBehaviour
             transform.rotation = rotation;
 
             transform.position = (currentMouseLocation + startMouseLocation) / 2;
-            transform.localScale = new Vector3((currentMouseLocation - startMouseLocation).magnitude, 0.3f, 1f);
+            transform.localScale = new Vector3((currentMouseLocation - startMouseLocation).magnitude * 0.15f, 1f, 1f);
         }
         else
         {

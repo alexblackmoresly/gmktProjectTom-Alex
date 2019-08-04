@@ -35,7 +35,7 @@ public class movement : MonoBehaviour
         lr.SetPosition(1, mouseLocation);
 
         direction = mouseLocation - (Vector2)transform.position;
-        power = direction.magnitude / maxDistance;
+        power = Mathf.Clamp(direction.magnitude / maxDistance, 0f, 1f);
         power *= maxForce;
         direction = direction.normalized;
 
